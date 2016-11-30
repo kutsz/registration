@@ -1,6 +1,7 @@
 <?php
-require_once 'model.php';
+require_once 'Model.php';
 
+Model::db_connection();
 
 $full_name = $_POST["full_name"];
 $email = $_POST["e_mail"];
@@ -10,7 +11,7 @@ $area = $_POST["area"];
 
 if(!empty($full_name) && !empty($email) && !empty($region) && !empty($city) && !empty($area)){
 
-	$emailList=getEmailList();
+	$emailList=Model::getEmailList();
 	$flag = false;
 
 	foreach ($emailList as $emailItem){
@@ -21,8 +22,8 @@ if(!empty($full_name) && !empty($email) && !empty($region) && !empty($city) && !
 	}
 	
 	if($flag){
-		$person = getPersonData($email);
-	 //$person = get_Person_Data($email);
+		$person = Model::getPersonData($email);
+	 //$person = Model::get_Person_Data($email);
 		
 		$namePerson = $person['name'];
 		$emailPerson = $person['email'];
@@ -33,9 +34,9 @@ if(!empty($full_name) && !empty($email) && !empty($region) && !empty($city) && !
 		echo $result;
 
 	}else{
-		$test = addPerson($full_name, $email, $region, $city, $area);	
+		$test = Model::addPerson($full_name, $email, $region, $city, $area);	
 	}
 
 
-
 }
+
