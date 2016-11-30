@@ -1,13 +1,14 @@
 <?php
-require_once 'model.php';
+require_once 'Model.php';
+
+Model::db_connection();
 
 $text = $_POST["text"];
 
-
 if(isset($text)){
-	$ter_pid = getPlace_by_id($text);
+	$ter_pid = Model::getPlace_by_id($text);
 	$place = [];
-	$place = getList_places($ter_pid);
+	$place = Model::getList_places($ter_pid);
 
 	foreach ($place as $placeItem){
 		echo "<option>$placeItem</option>";
