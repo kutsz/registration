@@ -30,10 +30,10 @@
 			<select class="chosen" name= "regionList" id="regionList" data-placeholder="Выберите область"required> 
 					<!-- onchange= "ajax_select_city()"  -->
 					<option></option>
-					<?php foreach ($region as $regionItem): ?>
-
-						<option><?php echo $regionItem; ?></option>
-					<?php endforeach; ?>
+				<?php foreach ($region as $regionItem): ?>
+                    <option id="<?= $regionItem['ter_id']?>"><?php echo $regionItem['ter_name']; ?></option>
+						<!--<option><?php echo $regionItem; ?></option> -->
+				<?php endforeach; ?>
 
 			</select> 
 

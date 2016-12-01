@@ -1,9 +1,5 @@
-
 <?php
-//controller
-	require_once 'model.php';
 
-	$region = getRegion();
+require_once 'Controller.php';
 
-	require 'view.php';
-
+Controller::view();
