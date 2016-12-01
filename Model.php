@@ -148,7 +148,6 @@ class Model
 	public static function addPerson($full_name, $e_mail, $territory_id){
 
 
-		// $territory ="$region, $city, $area";
 
 		$sql = 'INSERT INTO checked_in_people (name,email,territory)' 
 		.'VALUES (:name, :email, :territory_id)';
