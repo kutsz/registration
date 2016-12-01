@@ -5,12 +5,8 @@ Model::db_connection();
 
 $full_name = $_POST["full_name"];
 $email = $_POST["e_mail"];
-// $region = $_POST["region"];
-// $city = $_POST["city"];
-// $area = $_POST["area"];
 $area_id = $_POST["area_id"];
 
-// if(!empty($full_name) && !empty($email) && !empty($region) && !empty($city) && !empty($area)){
  if(!empty($full_name) && !empty($email) && !empty($area_id)){
 
 
@@ -26,15 +22,15 @@ $area_id = $_POST["area_id"];
 	
 	if($flag){
 		$person = Model::getPersonData($email);
-	 //$person = Model::get_Person_Data($email);
 		
 		$namePerson = $person['name'];
 		$emailPerson = $person['email'];
 		$territoryPerson_id = $person['territory'];
-	//list($regionPerson,$cityPerson,$areaPerson) = explode(",", $territoryPerson);
-	     $territoryPerson = Model::getAddres_ter($territoryPerson_id); 
+
+	    $territoryPerson = Model::getAddres_ter($territoryPerson_id); 
 
 		$result = "$namePerson,$emailPerson,$territoryPerson";
+		
 		echo $result;
 
 	}else{

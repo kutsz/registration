@@ -28,11 +28,9 @@
 		<p>
 			Список областей <br>
 			<select class="chosen" name= "regionList" id="regionList" data-placeholder="Выберите область"required> 
-					<!-- onchange= "ajax_select_city()"  -->
 					<option></option>
 				<?php foreach ($region as $regionItem): ?>
                     <option id="<?= $regionItem['ter_id']?>"><?php echo $regionItem['ter_name']; ?></option>
-						<!--<option><?php echo $regionItem; ?></option> -->
 				<?php endforeach; ?>
 
 			</select> 
@@ -43,7 +41,6 @@
 			Список городов <br>
 			<select id="cityList" name = "cityList" class="chosen"  data-placeholder="Выберите город" required>
 				<option></option>
-					<!-- onchange= "ajax_select_area()"-->
 			</select> 
 
 		</p>
@@ -58,7 +55,6 @@
 
 		<p>              
 			<input type="submit" name="submit" id="submit" value="Зарегистрироваться"> 
-				<!-- onclick="subAjax()" -->
 		</p>
 
 

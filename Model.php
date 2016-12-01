@@ -94,7 +94,7 @@ class Model
 	{
 
 		$sql = "SELECT ter_name,ter_id FROM t_koatuu_tree WHERE ter_pid IS NULL AND ter_name NOT IN ('м.Київ','м.Севастополь')";
-		 //$result = self::$link->query("SELECT ter_name FROM t_koatuu_tree WHERE ter_pid IS NULL");
+
 		$result = self::$link->query($sql);
 
 		$regionList = [];
@@ -107,13 +107,9 @@ class Model
 			$i++;
 		}
 
-		// while($row = $result->fetch(PDO::FETCH_ASSOC)) {
-		// 	$regionList[] = $row['ter_name'];
-		// }
-
-
 		return $regionList;
 	}
+
 //*************************************************************
 	public static function getPlace_by_id($id) 
 	{
@@ -143,32 +139,10 @@ class Model
 			$i++;
 		}
 
-		// while($row = $result->fetch()) {
-		// 	$placeList[] = $row['ter_name'];
-
-		// }
 
 		return $placeList;
 
 	}
-//*********************************************************
-
-	// public static function addPerson($full_name, $e_mail, $region, $city, $area){
-
-
-	// 	$territory ="$region, $city, $area";
-
-	// 	$sql = 'INSERT INTO checked_in_people (name,email,territory)' 
-	// 	.'VALUES (:name, :email, :territory)';
-
-	// 	$result = self::$link->prepare($sql);
-	// 	$result->bindParam(':name', $full_name, PDO::PARAM_STR);
-	// 	$result->bindParam(':email', $e_mail, PDO::PARAM_STR);
-	// 	$result->bindParam(':territory', $territory, PDO::PARAM_STR);
-
-	// 	return $result->execute();
-
-	// }
 
 //***************************************
 	public static function addPerson($full_name, $e_mail, $territory_id){
