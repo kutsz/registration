@@ -16,7 +16,7 @@ class Controller
 
 		Model::close_db_connection(); // close database connection
 
-        require_once 'View.php';
+        require 'View.php';
 
 	}
 
